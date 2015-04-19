@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TimesTraveler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--
+<link href="css/jquery.mobile-1.3.1.css" rel="stylesheet">
+-->
+  <link rel="stylesheet" href="http://leafletjs.com/dist/leaflet.css" />
+
+  <script src="js/jquery-1.9.1.js"></script>
+  <script src="js/jquery.mobile-1.3.1.js"></script>
+  <script src="js/jquery.mockjax.js"></script>
+  <script src="http://leafletjs.com/dist/leaflet.js"></script>
+
+  <script src="js/timestraveler.js"></script>
+</head>
+<body>
+    <div data-role="page" data-control-title="Second-level" id="fork">
+      <div data-theme="a" data-role="header">
+          <h3>
+              TimesTraveler
+          </h3>
+      </div>
+      <div data-role="content">
+          <a id="map-vote" data-role="button" href="#" data-icon="back" data-iconpos="left">
+              Get map data
+          </a>
+          <div data-controltype="textblock">
+  </div>
+    <div data-role="page" data-control-title="like1" id="mapview">
+      <div data-theme="a" data-role="header">
+          <h3>
+              TimesTraveler
+          </h3>
+      </div>
+      <div data-role="content">
+	      <div id="map" style="width: 600px; height: 400px"> </div>
+	      <script>
+		      var map = L.map('map').setView([41.505, -73.09], 10);
+
+			L.tileLayer('https://{s}.tiles.mapbox.com/v3/mkobar.kfo1de6f/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18
+}).addTo(map);
+
+
+		var popup = L.popup();
+
+		function onMapClick(e) {
+			popup
+				.setLatLng(e.latlng)
+				.setContent("You clicked the map at " + e.latlng.toString())
+				.openOn(map);
+		}
+
+		map.on('click', onMapClick);
+			
+		      
+	      </script>
+
+      </div>
+  </div>
+</body>
+</html>
